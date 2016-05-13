@@ -3,20 +3,21 @@ import {Component} from "@angular/core";
 
 @Component({
     selector: 'my-app',
-    template: `
-    <h1>Min Angular2 App</h1>
-    <p>{{name}}</p>
-    <input type="text" [(ngModel)]="name"/>
-    <p [class.danger]="name && name.length > 10">{{name}}</p>
-    <button type="button" (click)="name=undefined">Rensa</button>
-    `
+    templateUrl: 'beer.html'
 })
 
 export class AppComponent {
-    name:string='C.A.G Contactor';
+    name: string='C.A.G Contactor';
+    seconds: number = -1;
 
     constructor() {
+        this.nextTimeout();
         console.log('test');
+    }
+
+    nextTimeout() {
+        this.seconds++;
+        setTimeout(() => this.nextTimeout(), 1000);
     }
     
 }
