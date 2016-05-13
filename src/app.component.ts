@@ -1,31 +1,31 @@
 import {Component} from "@angular/core";
 import {Beer} from "./beerdetails/beer";
-import {BeerDetailsComponent} from "./beerdetails/beerdetails.component"
+import {BeerDetailsComponent} from "./beerdetails/beerdetails.component";
 
 @Component({
   selector: 'my-app',
   directives: [BeerDetailsComponent],
   template: `
-<h2>Öllistan</h2>
-<ol>
-  <li *ngFor="let beer of beers" [class.selected]="isSelected(beer)"><span class="badge">{{beer.points}}</span>
-    <a href="#" (click)="select(beer)">{{beer.name}}</a> <a class="danger" href="#" (click)="remove(beer)">[ta bort]</a>
-  </li>
-</ol>
-<button type="button" (click)="addBeer()">Lägg till ölsort</button>
-
-<hr>
-
-<my-beer-details *ngIf="selectedBeer" [beer]="selectedBeer" (updated)="beerUpdated($event)"></my-beer-details>
+                <h2>Öllistan</h2>
+                <ol>
+                  <li *ngFor="let beer of beers" [class.selected]="isSelected(beer)"><span class="badge">{{beer.points}}</span>
+                    <a href="#" (click)="select(beer)">{{beer.name}}</a> <a class="danger" href="#" (click)="remove(beer)">[ta bort]</a>
+                  </li>
+                </ol>
+                <button type="button" (click)="addBeer()">Lägg till ölsort</button>
+                
+                <hr>
+                
+                <my-beer-details *ngIf="selectedBeer" [beer]="selectedBeer" (updated)="beerUpdated($event)"></my-beer-details>
 `
 })
 export class AppComponent {
   beers:Beer[] = [
-    new Beer('Duvel','Ljus belgare som passar bra en varm sommardag.'),
-    new Beer('Pripps Blå','Eh?')
+    new Beer('Duvel', 'Ljus belgare som passar bra en varm sommardag.'),
+    new Beer('Pripps Blå', 'Eh?')
   ];
 
-  selectedBeer: Beer;
+  selectedBeer:Beer;
 
   constructor() {
   }

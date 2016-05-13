@@ -7,10 +7,10 @@ import {Beer} from "./beer";
 })
 export class BeerDetailsComponent {
   @Input()
-  beer: Beer;
+  beer:Beer;
   @Output()
-  updated: EventEmitter<Beer> = new EventEmitter();
-  
+  updated:EventEmitter<Beer> = new EventEmitter();
+
   like() {
     this.beer.points++;
     this.updated.emit(this.beer);
