@@ -4,3 +4,11 @@
 <input type="text" [(ngModel)]="name"/>
 <p [class.danger]="name && name.length > 10">{{name}}</p>
 <button type="button" (click)="name=undefined">Rensa</button>
+<ul>
+<li *ngFor="let thing of things">{{thing}}</li>
+</ul>
+<button type="button" (click)="addThing()">Lägg till</button>
+
+<hr>
+<part [text]="name" (size)="showSize($event)"></part>
+<p>Längd: {{nameSize}}</p>
