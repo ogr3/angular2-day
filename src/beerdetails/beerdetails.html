@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Min titel</title>
+</head>
+<body>
+
+<h2>Ölsort: {{beer.name}}</h2>
+<dl>
+    <dt>Beskrivning</dt>
+    <dd>{{beer.description}}</dd>
+</dl>
+
+<p>Ange ölsort: <input type="text" [(ngModel)]="beer.name"></p>
+<p>Karaktär: <input type="text" [(ngModel)]="beer.description"></p>
+<button type="button" (click)="like()">Yep, den är smarrig!</button>
+</body>
+</html>
