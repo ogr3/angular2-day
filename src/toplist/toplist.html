@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Toplist</title>
+</head>
+<body>
+<ol>
+    <div *ngFor="let beer of topBeers()">
+        <span class="badge">{{beer.points}}</span> {{beer.name}}
+    </div>
+</ol>
+</body>
+</html>

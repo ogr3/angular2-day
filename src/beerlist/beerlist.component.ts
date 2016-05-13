@@ -10,7 +10,7 @@ import {BeerService} from "../beer/beer.service";
   templateUrl: 'beerlist/beerlist.html'
 })
 export class BeerListComponent {
-  constructor(private router: Router, private beerService: BeerService) {
+  constructor(private router:Router, private beerService:BeerService) {
   }
 
   addBeer() {
