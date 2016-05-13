@@ -7,16 +7,7 @@ import {BeerService} from "../beer/beer.service";
 @Component({
   selector: 'my-beer-list',
   directives: [BeerDetailsComponent],
-  template: `
-<h2>Öllistan</h2>
-<ul>
-  <div *ngFor="let beer of getBeers()"><span class="badge">{{beer.points}}</span>
-    <a (click)="select(beer)">{{beer.name}} ({{beer.id}})</a> 
-    <a class="danger remove" href="#" (click)="remove(beer)">[ta bort]</a>
-  </div>
-</ul>
-<button type="button" (click)="addBeer()">Lägg till ölsort</button>
-`
+  templateUrl: 'beerlist/beerlist.html'
 })
 export class BeerListComponent {
   private router: Router;
