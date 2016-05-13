@@ -23,6 +23,6 @@ export class BeerDetailsComponent implements OnActivate {
   }
 
   close() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/beer-admin']);
   }
 }
